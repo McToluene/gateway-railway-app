@@ -8,6 +8,7 @@ export class AppController {
 
   @Get()
   getHello(): string {
+    console.log('We here');
     let heroString: string;
     this.appService
       .getHero()
