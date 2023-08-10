@@ -1,6 +1,7 @@
 import { Inject, Injectable, OnModuleInit } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
 import { HeroesService } from './auth/interfaces/hero.interface';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class AppService implements OnModuleInit {
@@ -11,7 +12,12 @@ export class AppService implements OnModuleInit {
   onModuleInit() {
     this.heroesService = this.client.getService<HeroesService>('HeroService');
   }
+
   getHello(): string {
     return 'Hello World!';
+  }
+
+  getHero(): Observable<string> {
+    return this.heroesService.findOne({ id: 1 });
   }
 }
