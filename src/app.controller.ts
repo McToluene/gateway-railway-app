@@ -8,16 +8,17 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    console.log('We here');
     let heroString: string;
     this.appService
       .getHero()
       .pipe(
         map((hero) => {
+          console.log('hERRO' + hero);
           heroString = hero;
         }),
       )
       .subscribe();
+    console.log('HeroString : ' + heroString);
     return heroString;
   }
 }
