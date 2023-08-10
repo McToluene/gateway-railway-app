@@ -9,7 +9,7 @@ export class AppService implements OnModuleInit {
   constructor(@Inject('AUTH_SERVICE') private client: ClientGrpc) {}
 
   onModuleInit() {
-    this.heroesService = this.client.getService<HeroesService>('HeroesService');
+    this.heroesService = this.client.getService<HeroesService>('HeroService');
   }
   getHello(): string {
     return 'Hello World!';
