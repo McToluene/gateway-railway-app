@@ -1,5 +1,3 @@
-import { Observable } from 'rxjs';
-
 export interface HeroesService {
-  findOne(data: { id: number }): Observable<any>;
+  findOne(data: { id: number }): string;
 }
