@@ -7,7 +7,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHero(): string {
+  getHello(): string {
     let heroString: string;
     this.appService
       .getHero()
